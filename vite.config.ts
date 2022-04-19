@@ -17,6 +17,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
+      vue: "vue/dist/vue.esm-bundler.js",
     }
   },
   json: {
@@ -32,16 +33,16 @@ export default defineConfig({
         // }),
         // assetFileNames: (chunkInfo) => {
         //   console.log(chunkInfo);
-          
+
         //   return `assets/[name]/[ext]/[name]-[hash].[ext]`
         // },
-        
+
         // manualChunks(id) {
         //   if (id.includes('node_modules')) {
         //     return 'vendor';
         //   }
         //   console.log(this);
-          
+
         //   return id;
         // }
       }

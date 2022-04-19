@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "get-config": "vite --config vite.config.ts"
+    "preview": "vite preview"
   },
   "dependencies": {
     "element-plus": "^2.1.7",

@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { inject, onBeforeUnmount, onMounted, ref } from 'vue'
 
 defineProps<{ msg: string }>()
 
 const count = ref(0);
-
 
 // 获取当前时间
 const getTime = () => {
@@ -12,21 +11,24 @@ const getTime = () => {
 }
 const currentTime = ref(getTime());
 
-// const timer = setInterval(() => {
-//   console.log('timer is running, timer:', timer);
-//   currentTime.value = getTime();
-// }, 1000);
-</script>
+const timer = setInterval(() => {
+  console.log('timer is running, timer:', timer);
+  currentTime.value = getTime();
+}, 1000);
 
-<script lang="ts">
-export default {
-  mounted() {
-  },
-  beforeUnmount() {
-    // clearInterval(this.timer);
-    // console.log('timer is stopped:', this.timer);
-  }
-}
+onMounted(() => {
+  console.log('onMounted');
+})
+
+onBeforeUnmount(() => {
+  clearInterval(timer);
+  console.log(`timer is cleared, timer: ${timer}`);
+  console.log('onBeforeUnmount');
+});
+
+const test = inject('test');
+
+console.log(test);
 </script>
 
 <template>
@@ -49,10 +51,9 @@ export default {
   <p>
     <a href="https://vitejs.dev/guide/features.html" target="_blank">Vite Docs</a>
     |
-    <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
+    <a href="https://staging-cn.vuejs.org/" target="_blank">Vue 3 Docs</a>
   </p>
 
-  <button type="button" @click="count++">count is: {{ count }}</button>
   <el-button @click="count++">count is: {{ count }}</el-button>
   <p>
     Edit
