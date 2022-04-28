@@ -6,6 +6,5 @@
 
 <script setup lang="ts">
 import { provide } from "vue";
-import HelloWorld from "../components/HelloWorld.vue";
 provide("test", 'HelloWorld');
 </script>
