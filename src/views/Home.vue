@@ -1,6 +1,5 @@
 <template>
   <span>Home</span>
-  <!-- <img src="../assets/logo.png" alt="vue logo" /> -->
   <HelloWorld msg="Hello World" />
 </template>
 
